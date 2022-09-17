@@ -1,29 +1,33 @@
+html{
+    /**scroll-behavior: smooth;**/
+    overflow: hidden;
+}
 *{
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.heading {
-    color: rebeccapurple;
-    padding: 1em 0;
+*::selection{
+    background-color: rebeccapurple;
+    color: white;
 }
 .container a {
     text-decoration: none;
 }
 body{
     overflow-x: hidden;
+    top: 0;
+    left: 0;
 }
 .container li {
     list-style: none;
 }
 main{
-    width: 700px;
-    margin: auto;
-}
+    margin: 5em auto;
+}/**
 @media (max-width: 768px) {
     .container main{
-        width: 70%;
         margin: 5em auto;
     } 
-}
+}**/

@@ -7,29 +7,31 @@ import{
     checkboxToggle,
     hamburguer,
     navLinks,
-    menuDiv
+    menuDiv,
+    heading,
+    crossClose,
+    divRoutes
 }from './navbar.module.css';
 
-const NavBarComponent =({menu})=> {
+const NavBarComponent =({menu, pageTitle})=> {
     const buildRoutes = (menu) => {
         return menu.items.map( ({id, submenu, title, link, isMain}) => {
             return (<NavbarLink key={id} submenu={submenu} title={title} link={link} isMain={isMain} />);
         });
     }
-    const goTo = (address) => {
-        navigate(address);
-    }
 
     return (
         <nav className={navBar}>
-            <div className={logo} onClick={() => goTo("/")}>Daniel 🧑🏽‍💻</div>
+            <div className={logo} onClick={() => navigate("/")}>Daniel 🧑🏽‍💻</div>
+            <h1 className = {heading}>{pageTitle}</h1>
             <ul className={navLinks}>
                 <input type='checkbox' className={checkboxToggle} id="checkbox-toggle"/>
                 <label htmlFor='checkbox-toggle' className={hamburguer}>&#9776;</label>
                 <div className={menuDiv}>
-                    {
-                    buildRoutes(menu)
-                    }
+                    <label htmlFor='checkbox-toggle' className={crossClose}>X</label>
+                    <div className={divRoutes}>
+                        {buildRoutes(menu)}
+                    </div>
                 </div>
             </ul>
         </nav>

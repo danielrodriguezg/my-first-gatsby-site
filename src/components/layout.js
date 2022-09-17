@@ -73,9 +73,8 @@ const menu = {
 const Layout = ({ pageTitle, children }) => {
   return (
     <div className={container}>
-        <NavBarComponent menu = {menu}/> 
+        <NavBarComponent menu = {menu} pageTitle={pageTitle}/> 
         <main>
-            <h1 className = {heading}>{pageTitle}</h1>
                 {children}
         </main>
     </div>
